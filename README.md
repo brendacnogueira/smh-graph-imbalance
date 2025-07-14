@@ -50,9 +50,9 @@ augmented_model, augmented_train_losses, augmented_val_losses = train_model_new(
 
 ## 🧪Datasets
 
- [x] QM9
- [x] ESOL
- [x] FreeSolv
+- [x] QM9
+- [x] ESOL
+- [x] FreeSolv
 
 ## 📌 Citation
 ```
