@@ -1,4 +1,4 @@
-name: graphsmoter
+name: smh
 channels:
   - pytorch
   - dglteam/label/cu118
