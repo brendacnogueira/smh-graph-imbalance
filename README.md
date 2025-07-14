@@ -10,3 +10,23 @@ Run experiments
 ```
 python main_cv.py
 ```
+
+# Create Augmentations
+```
+from utils import *
+node_indicator= get_node_indicator(dataset.smiles.values)
+
+graphs_train=smiles_to_nx(dataset_train.smiles.values,node_indicator)
+ph_=phi_control(pd.Series(targets_train, dtype="float64"), extr_type="low") #extr_type="high"/"both"/"low"
+smh = SimpleSMH()
+smh_model,best_params = smh.fit(graphs_train, targets_train,ph_)
+
+synthetic_graphs, synthetic_target_values, indices = smh.generate_samples(targets_train, n_samples=int(n_augmentations))
+
+augmented_graphs=list(graphs_train) + list(synthetic_graphs)
+                   
+dataset_synthetic = creat_dataset_from_synthetic(synthetic_graphs, synthetic_target_values,node_indicator)
+                    
+dataset_augmented=dataset_train+dataset_synthetic
+```
+
