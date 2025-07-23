@@ -69,7 +69,7 @@ augmented_model, train_losses, val_losses = train_model_new(
 ```
 ## 🧪Datasets
 
-- [x] QM9
+- [x] Lipo
 - [x] ESOL
 - [x] FreeSolv
 
